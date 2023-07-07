@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* general variables */
+  --boxShadow: 0 0 5px rgb(250, 234, 230);
+  --boxShadow2: 0px 0px 15px hsl(4, 100%, 67%);
+  --transition: all 0.3s linear;
+
+  /* variables for this project */
+  --Tomato: hsl(4, 100%, 67%);
+  --TomatoA: hsla(4, 100%, 67%, 0.2);
+  --Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  display: grid;
+  font-family: "Roboto", "Open Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  place-items: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+.mobile-img {
+  width: 100%;
+}
+
+.desktop-img {
+  display: none;
+}
+
+.article {
+  padding: 0 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.article p {
+  color: var(--Charcoal-Grey);
+}
+
+.services {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  white-space: nowrap;
+}
+
+.email,
+#email,
+.btn {
+  display: block;
+}
+
+.email {
+  font-weight: 700;
+  color: var(--Charcoal-Grey);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.email {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.email small {
+  color: var(--Tomato);
+}
+
+#email {
+  border-radius: 0.5rem;
+  border: 1px solid var(--Grey);
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem 0;
+  outline: none;
+  padding: 1rem;
+}
+
+#email:focus {
+  border: 1px solid var(--Dark-Slate-Grey);
+  outline: none;
+}
+
+.btn {
+  background: var(--Dark-Slate-Grey);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--White);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  outline: none;
+  padding: 1rem 2rem;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--Tomato);
+  box-shadow: var(--boxShadow2);
+  transition: var(--transition);
+}
+
+/* sucess */
+.success {
+  display: none;
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+.success-msg {
+  display: flex;
+  flex-direction: column;
+}
+
+.success p {
+  line-height: 1.2;
+}
+
+.success .btn {
+  margin-top: 10rem;
+}
+
+.input-email {
+  color: var(--Dark-Slate-Grey);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 55rem) {
+  .subscribe {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 2rem 0;
+  }
+
+  .mobile-img {
+    display: none;
+  }
+
+  .desktop-img {
+    display: block;
+  }
+
+  .success {
+    max-width: 30rem;
+  }
+
+  .success .btn {
+    margin-top: 2rem;
+  }
+}
+
+/* for js */
+.hide .subscribe {
+  display: none;
+}
+
+.hide .success {
+  display: block;
+}
+
+#email.error {
+  background-color: var(--TomatoA);
+  border: 2px solid var(--TomatoA);
+  color: var(--Tomato);
+}
+
+/* footer styles */
+.my-profile {
+  background-color: hsl(228, 59%, 16%);
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.my-profile > a {
+  cursor: pointer;
+  color: hsl(51, 79%, 45%);
+  text-decoration: none;
+}
+
+.my-profile-icons a {
+  cursor: pointer;
+  color: var(--White);
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .my-profile {
+    font-size: 12px;
+  }
+
+  .my-profile-icons a:first-of-type,
+  .my-profile-icons a:last-of-type {
+    display: none;
+  }
+}
